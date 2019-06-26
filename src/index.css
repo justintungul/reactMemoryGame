@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.box {
+  height: 220px;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.blue {
+  background-color: lightblue;
+}
+
+.red {
+  background-color: pink;
+}
+
+.green {
+  background-color: lightgreen;
+  
+}
+
+.yellow {
+  background-color: lightyellow;
+}
