@@ -4,25 +4,25 @@ import './index.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// class Box extends React.Component {
-//     handleClick = () => {
-//         if (this.props.stage === 3) {
-//             console.log(this.props.status);
-//             this.props.handleAnswer({
-//                 pos: this.props.pos,
-//                 status: this.props.status
-//             });
-//         }
-//     }
-//     render() {
-//         return (
-//             <div 
-//                 className={"col-3 box " + this.props.status + " " + (this.props.status === 1 ? 'blue' : '')} 
-//                 onClick={this.handleClick}
-//             ></div>
-//         )
-//     }
-// }
+class Box extends React.Component {
+    // handleClick = () => {
+    //     if (this.props.stage === 3) {
+    //         console.log(this.props.status);
+    //         this.props.handleAnswer({
+    //             pos: this.props.pos,
+    //             status: this.props.status
+    //         });
+    //     }
+    // }
+    render() {
+        return (
+            <div 
+                className={"col-3 box " + this.props.status + " " + (this.props.status === 1 ? 'blue' : '')} 
+                onClick={this.handleClick}
+            ></div>
+        )
+    }
+}
 
 class App extends React.Component {
     constructor(props) {
