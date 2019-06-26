@@ -5,15 +5,15 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Box extends React.Component {
-    // handleClick = () => {
-    //     if (this.props.stage === 3) {
-    //         console.log(this.props.status);
-    //         this.props.handleAnswer({
-    //             pos: this.props.pos,
-    //             status: this.props.status
-    //         });
-    //     }
-    // }
+    handleClick = () => {
+        if (this.props.stage === 3) {
+            console.log(this.props.status);
+            this.props.handleAnswer({
+                pos: this.props.pos,
+                status: this.props.status
+            });
+        }
+    }
     render() {
         return (
             <div 
@@ -91,19 +91,19 @@ class App extends React.Component {
     //         }
     //     }, 1000)
     // }
-    // handleAnswer = (info) => {
-    //     const newBoard = this.state.board.map((row, rowIdx) => {
-    //         const newRow = row.map((box, boxIdx) => {
-    //             if (rowIdx === info.pos[0] && boxIdx === info.pos[1]) {
-    //                 return info.status ? 0 : 1;
-    //             } else {
-    //                 return box;
-    //             }
-    //         })
-    //         return newRow;
-    //     })
-    //     this.setState({board: newBoard});
-    // }
+    handleAnswer = (info) => {
+        const newBoard = this.state.board.map((row, rowIdx) => {
+            const newRow = row.map((box, boxIdx) => {
+                if (rowIdx === info.pos[0] && boxIdx === info.pos[1]) {
+                    return info.status ? 0 : 1;
+                } else {
+                    return box;
+                }
+            })
+            return newRow;
+        })
+        this.setState({board: newBoard});
+    }
     // getAnswers = () => {
     //     const answers = this.state.board.map((row, rowIdx) => {
     //         const newRow = row.map((box, boxIdx) => {
