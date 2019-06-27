@@ -31,12 +31,12 @@ class App extends React.Component {
             stage: 0,
             time: 3,
             board: [],
-            // correct: []
-            correct: [
-                [1,0,0,1],
-                [0,1,0,0],
-                [0,0,1,0]
-            ]
+            correct: []
+            // correct: [
+            //     [1,0,0,1],
+            //     [0,1,0,0],
+            //     [0,0,1,0]
+            // ]
         }
     }
     onStart = () => {
@@ -47,15 +47,15 @@ class App extends React.Component {
         });
         this.countDown(1);
     }
-    // randomizeBoxes = () => {
-    //     let randomBoxes = Array(3).fill(Array(4).fill(0));
-    //     randomBoxes = randomBoxes.map((row) => {
-    //         return row.map(box => {
-    //             return Math.round(Math.random());
-    //         })
-    //     })
-    //     return randomBoxes;
-    // }
+    randomizeBoxes = () => {
+        let randomBoxes = Array(3).fill(Array(4).fill(0));
+        randomBoxes = randomBoxes.map((row) => {
+            return row.map(box => {
+                return Math.round(Math.random());
+            })
+        })
+        return randomBoxes;
+    }
     countDown = (time) => {
         this.setState({ time: time})
         const interval = window.setInterval(() => {
