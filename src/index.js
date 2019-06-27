@@ -56,40 +56,40 @@ class App extends React.Component {
     //     })
     //     return randomBoxes;
     // }
-    // countDown = (time) => {
-    //     this.setState({ time: time})
-    //     const interval = window.setInterval(() => {
-    //         this.setState(state => {
-    //             if (state.time > 0) {
-    //                 state.time -= 1;
-    //             }
-    //             return state;
-    //         });
+    countDown = (time) => {
+        this.setState({ time: time})
+        const interval = window.setInterval(() => {
+            this.setState(state => {
+                if (state.time > 0) {
+                    state.time -= 1;
+                }
+                return state;
+            });
 
-    //         if (this.state.time === 0) {
-    //             clearInterval(interval);
+            if (this.state.time === 0) {
+                clearInterval(interval);
 
-    //             if (this.state.stage === 1) {
-    //                 this.setState({
-    //                     stage: 2,
-    //                     board: this.state.correct
-    //                 });
-    //                 this.countDown(1);
-    //             } 
-    //             else if (this.state.stage === 2) {
-    //                 this.setState({
-    //                     stage: 3,
-    //                     board: Array(3).fill(Array(4).fill(0))
-    //                 });
-    //                 this.countDown(3);
-    //             }
-    //             else if (this.state.stage === 3) {
-    //                 this.setState({stage: 4});
-    //                 this.getAnswers();
-    //             }
-    //         }
-    //     }, 1000)
-    // }
+                if (this.state.stage === 1) {
+                    this.setState({
+                        stage: 2,
+                        board: this.state.correct
+                    });
+                    this.countDown(1);
+                } 
+                else if (this.state.stage === 2) {
+                    this.setState({
+                        stage: 3,
+                        board: Array(3).fill(Array(4).fill(0))
+                    });
+                    this.countDown(3);
+                }
+                else if (this.state.stage === 3) {
+                    this.setState({stage: 4});
+                    this.getAnswers();
+                }
+            }
+        }, 1000)
+    }
     handleAnswer = (info) => {
         const newBoard = this.state.board.map((row, rowIdx) => {
             const newRow = row.map((box, boxIdx) => {
