@@ -188,10 +188,10 @@ class App extends React.Component {
             )
         });
         return (
-            <div className="text-center">
+            <div className="text-center container-fluid">
 
                 {/* Header */}
-                <h1 className="display-3 my-4">Memory Game</h1>
+                <h1 className="my-4">Memory Game</h1>
                 
                 {/* Main Board */}
                 <div className="row">
@@ -201,31 +201,32 @@ class App extends React.Component {
                 </div>
 
                 {/* Display each element below depending on state.stage */}
+                <div className="pt-3">
+                    {/* Start game button */}
+                    <button className={"btn btn-success px-5 " + (this.state.stage === 0 ? '' : 'd-none')}>
+                        <h3 className="my-0"onClick={this.onStart}>Start Game</h3>
+                    </button>
 
-                {/* Start game button */}
-                <button className={"btn btn-success mt-4 px-5 " + (this.state.stage === 0 ? '' : 'd-none')}>
-                    <h1 className="display-4" onClick={this.onStart}>Start Game</h1>
-                </button>
+                    {/* Get ready timer */}
+                    <h3 className={(this.state.stage === 1 ? '' : 'd-none')}>
+                        Get ready to memorize in <span className="font-weight-bold">{this.state.time}</span>
+                    </h3>
 
-                {/* Get ready timer */}
-                <h3 className={"my-5 " + (this.state.stage === 1 ? '' : 'd-none')}>
-                    Get ready to memorize in <span className="font-weight-bold">{this.state.time}</span>
-                </h3>
+                    {/* User memorizes timer*/}
+                    <h3 className={(this.state.stage === 2 ? '' : 'd-none')}>
+                        Go! you have <span className="font-weight-bold">{this.state.time}</span> seconds remaining.
+                    </h3>
 
-                {/* User memorizes timer*/}
-                <h3 className={"my-5 " + (this.state.stage === 2 ? '' : 'd-none')}>
-                    Go! you have <span className="font-weight-bold">{this.state.time}</span> seconds remaining.
-                </h3>
-
-                {/* User guess the cells timer */}
-                <h3 className={"my-5 " + (this.state.stage === 3 ? '' : 'd-none')}>
-                    Guess the correct cells in <span className="font-weight-bold">{this.state.time}</span> seconds!
-                </h3>
-                
-                {/* Play again button */}
-                <button className={"btn btn-primary mt-4 px-5 " + (this.state.stage === 4 ? '' : 'd-none')}>
-                    <h1 className="display-4" onClick={this.onStart}>Play Again</h1>
-                </button>
+                    {/* User guess the cells timer */}
+                    <h3 className={(this.state.stage === 3 ? '' : 'd-none')}>
+                        Guess the correct cells in <span className="font-weight-bold">{this.state.time}</span> seconds!
+                    </h3>
+                    
+                    {/* Play again button */}
+                    <button className={"btn btn-primary px-5 " + (this.state.stage === 4 ? '' : 'd-none')}>
+                        <h3 className="my-0" onClick={this.onStart}>Play Again</h3>
+                    </button>
+                </div>
             </div>
         );
     }
