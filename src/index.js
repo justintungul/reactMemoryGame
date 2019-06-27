@@ -103,26 +103,26 @@ class App extends React.Component {
         })
         this.setState({board: newBoard});
     }
-    // getAnswers = () => {
-    //     const answers = this.state.board.map((row, rowIdx) => {
-    //         const newRow = row.map((box, boxIdx) => {
-    //             if (this.state.correct[rowIdx][boxIdx] === 1 && box === 1) {
-    //                 return 'green';
-    //             }
-    //             else if (this.state.correct[rowIdx][boxIdx] === 1 && box === 0) {
-    //                 return 'yellow';
-    //             }
-    //             else if (box === 1) {
-    //                 return 'red';
-    //             }
-    //             else {
-    //                 return 0;
-    //             }
-    //         });
-    //         return newRow;
-    //     });
-    //     this.setState({board: answers});
-    // }
+    getAnswers = () => {
+        const answers = this.state.board.map((row, rowIdx) => {
+            const newRow = row.map((box, boxIdx) => {
+                if (this.state.correct[rowIdx][boxIdx] === 1 && box === 1) {
+                    return 'green';
+                }
+                else if (this.state.correct[rowIdx][boxIdx] === 1 && box === 0) {
+                    return 'yellow';
+                }
+                else if (box === 1) {
+                    return 'red';
+                }
+                else {
+                    return 0;
+                }
+            });
+            return newRow;
+        });
+        this.setState({board: answers});
+    }
     render() {
         const board = this.state.board.map((row, rowIdx) => {
             const boxes = row.map((box, idx) => {
