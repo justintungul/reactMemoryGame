@@ -191,7 +191,7 @@ class App extends React.Component {
             <div className="text-center container-fluid">
 
                 {/* Header */}
-                <h1 className="my-4">Kirk's Memory Game</h1>
+                <h1 className="my-4">Kirk Guwapo's Memory Game</h1>
                 
                 {/* Main Board */}
                 <div className="row">
